@@ -13,7 +13,7 @@ export default function EditorWindow() {
      alert(editorRef.current.getValue());
    }
   return (
-    <React.Fragment>
+    <div>
    <Editor
      height="90vh"
      width="50vw"
@@ -22,6 +22,6 @@ export default function EditorWindow() {
      onMount={handleEditorDidMount}
    />
    <button onClick={showValue}>Show Value</button>
-   </React.Fragment>
+   </div>
   );
 }

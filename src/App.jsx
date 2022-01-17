@@ -3,15 +3,16 @@ import './App.css'
 import EditorWindow from './components/EditorWindow'
 import Spreadsheet from './components/Spreadsheet'
 import Layout from './Layout'
+import styled from 'styled-components'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <Layout>
+      <Layout >
         <EditorWindow />
-        <Spreadsheet />
+        <Spreadsheet  />
       </Layout>
     </div>
   )

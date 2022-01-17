@@ -12,9 +12,12 @@ const rows = [
   { id: 1, title: 'Demo' }
 ];
 
- 
+
 export default function EditorWindow() {
   return (
-    <DataGrid columns={columns} rows={rows} />
+    <div style={{ height: '100vh', width: '50vw' }}>
+
+      <DataGrid columns={columns} rows={rows} />
+    </div>
   );
 }

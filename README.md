@@ -19,6 +19,7 @@ pnpm install --save @monaco-editor/react
 pnpm run dev
 pnpm install --save react-data-grid
 pnpm run dev
+pnpm install --save styled-components
 ```
 
 
