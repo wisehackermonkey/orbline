@@ -3,8 +3,9 @@ import ReactDOM from "react-dom";
 import DataGrid from 'react-data-grid';
 
 const columns = [
-  { key: 'id', name: 'ID' },
-  { key: 'title', name: 'Title' }
+  { key: 'component', name: 'component' },
+  { key: 'lowest', name: 'Low Estimate' },
+  { key: 'highest', name: 'High Estimate' }
 ];
 
 // let rows = [

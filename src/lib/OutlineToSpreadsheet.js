@@ -24,12 +24,13 @@ let outline_to_spreadsheet = (outline) => {
         print,
         // final step convertion to spreadsheet component data format
         (rows) => rows.map((row,i) => {
+            var row = row.trim()
             if (!is_indented_line(row)) {
                 //no line indenting
-                return  { id: i, row: row , indent_level: 0 } 
+                return  { component: row , lowest:0.0, highest:0, indent_level: 0 } 
             } else {
                 let indent_level = get_indent_level(row)
-                return   { id: i, row: row , indent_level: indent_level }
+                return   { component: row , lowest:0.0, highest:0, indent_level: indent_level }
             }
 
             

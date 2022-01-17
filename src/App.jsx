@@ -18,7 +18,8 @@ function App() {
   useEffect(() => {
     // alert(editorText)
     if (editorText) {
-      console.log(OutlineToSpreadsheet(editorText))
+      // console.log()
+      setRows(OutlineToSpreadsheet(editorText))
     }
   }, [editorText])
 
@@ -26,9 +27,7 @@ function App() {
     <div className="App">
       <Layout >
         <EditorWindow setEditorText={setEditorText} />
-        <button onClick={() => {
-
-        }}>Sync</button>
+        
 
         <Spreadsheet rows={rows} setRows={setRows} />
       </Layout>
