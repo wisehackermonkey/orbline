@@ -5,7 +5,9 @@ import DataGrid from 'react-data-grid';
 const columns = [
   { key: 'component', name: 'component' },
   { key: 'lowest', name: 'Low Estimate' },
-  { key: 'highest', name: 'High Estimate' }
+  { key: 'highest', name: 'High Estimate' },
+  { key: 'grouped', name: 'Grouped!' },
+  { key: 'indent_level', name: 'Indent Level' },
 ];
 
 // let rows = [

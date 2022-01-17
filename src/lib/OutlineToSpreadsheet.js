@@ -1,5 +1,7 @@
 let convert_lines_into_rows = (text) => {
-    return text.split("\n").filter((row)=> row.trim() !== "");
+    return text.split("\n")
+    // used to remove empty lines        
+    .filter((row)=> row.trim() !== "");
 }
 
 let is_indented_line = (line) => {
@@ -27,7 +29,11 @@ let outline_to_spreadsheet = (outline) => {
             var row = row.trim()
             if (!is_indented_line(row)) {
                 //no line indenting
-                return  { component: row , lowest:0.0, highest:0, indent_level: 0 } 
+                return  { component: row , lowest:0.0, highest:0, indent_level: 0, children: [
+                    {
+                        component: row +"-1" , lowest:0.0, highest:0, indent_level: 0,
+                    }]
+                 } 
             } else {
                 let indent_level = get_indent_level(row)
                 return   { component: row , lowest:0.0, highest:0, indent_level: indent_level }
