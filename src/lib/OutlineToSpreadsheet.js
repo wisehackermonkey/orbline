@@ -1,5 +1,5 @@
 let convert_lines_into_rows = (text) => {
-    return text.split("\n");
+    return text.split("\n").filter((row)=> row.trim() !== "");
 }
 
 let is_indented_line = (line) => {
