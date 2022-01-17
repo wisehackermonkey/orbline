@@ -20,3 +20,8 @@ pnpm run dev
 pnpm install --save react-data-grid
 pnpm run dev
 ```
+
+
+# libraries used
+[@monaco-editor/react - npm](https://www.npmjs.com/package/@monaco-editor/react)
+-      [demo Monaco Editor React](https://monaco-react.surenatoyan.com/)
