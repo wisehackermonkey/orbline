@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 import Editor from "@monaco-editor/react";
-export default function EditorWindow() {
+export default function EditorWindow({setEditorText}) {
 
   const editorRef = useRef(null);
   function handleEditorDidMount(editor, monaco) {
@@ -11,6 +11,9 @@ export default function EditorWindow() {
   function showValue() {
     alert(editorRef.current.getValue());
   }
+  function getValue(){
+    return editorRef.current.getValue();
+  }
   return (
     <div>
       <Editor
@@ -19,8 +22,8 @@ export default function EditorWindow() {
         defaultLanguage="javascript"
         defaultValue="// some comment"
         onMount={handleEditorDidMount}
+        onChange={setEditorText}
       />
-      <button onClick={showValue}>Sync</button>
     </div>
   );
 }

@@ -18,20 +18,24 @@ let get_indent_level = (line) => {
 // pipe(input object, <function or >,[<fn>, <option data>])
 // this returns result of all functions running in a pipe
 const pipe = (firstValue, ...fns) => [...fns].reduce((v, fn) => { if (Array.isArray(fn)) { if (fn.length >= 2) { return fn[0](v, fn[1]) } } return fn(v) }, firstValue)
-
+const print = (x) => {console.log(x); return x}
 let outline_to_spreadsheet = (outline) => {
     return pipe(outline, convert_lines_into_rows,
-        (rows) => rows.map((row) => {
+        print,
+        // final step convertion to spreadsheet component data format
+        (rows) => rows.map((row,i) => {
             if (!is_indented_line(row)) {
                 //no line indenting
-                return [row, 0]
+                return  { id: i, row: row , indent_level: 0 } 
             } else {
                 let indent_level = get_indent_level(row)
-                return [row, indent_level]
-        ),
-        // final step convertion to spreadsheet component data format
-        (rows) => rows.map((row, i) => {
-            return { id: i, row: row[0], indent_level: row[1] }
+                return   { id: i, row: row , indent_level: indent_level }
+            }
+
+            
         }),
+         
+    )
+
 }
 export default outline_to_spreadsheet;
