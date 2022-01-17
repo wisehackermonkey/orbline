@@ -17,4 +17,6 @@ pnpm run dev
 ```bash
 pnpm install --save @monaco-editor/react
 pnpm run dev
+pnpm install --save react-data-grid
+pnpm run dev
 ```
