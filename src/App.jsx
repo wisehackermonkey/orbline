@@ -20,6 +20,9 @@ function App() {
     if (editorText) {
       // console.log()
       setRows(OutlineToSpreadsheet(editorText))
+
+      localStorage.editorSavedText = editorText;
+
     }
   }, [editorText])
 
@@ -27,7 +30,7 @@ function App() {
     <div className="App">
       <Layout >
         <EditorWindow setEditorText={setEditorText} />
-        
+
 
         <Spreadsheet rows={rows} setRows={setRows} />
       </Layout>
